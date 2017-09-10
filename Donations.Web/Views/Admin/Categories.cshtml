@@ -1,0 +1,38 @@
+﻿@using Donations.Data
+@model Donations.Web.Models.CategoriesViewModel
+
+<div class="row">
+    <div class="well col-md-6 col-md-offset-3">
+        <h1 style="text-align: center">Categories</h1>
+        <ul id="catList">
+            @foreach (Category c in Model.Categories)
+            {
+                <li>@c.Name</li>
+            }
+        </ul>
+        <button id="btnNew" class="btn btn-primary">Add Category</button>
+    </div>
+</div>
+
+<div class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New Category</h4>
+            </div>
+            <div class="modal-body">
+                <input id="categoryName" type="text" class="form-control" placeholder="New Category" />
+            </div>
+            <div class="modal-footer">
+                <button id="btnAdd" type="button" class="btn btn-success">Add Category</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/categories.js"></script>
+}

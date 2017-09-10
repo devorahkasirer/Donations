@@ -1,0 +1,17 @@
+﻿@using Donations.Data
+@model Donations.Web.Models.UserViewModel
+
+<div class="row">
+    <div class="well col-md-8 col-md-offset-2">
+        <h1>Welcome back Admin @Model.User.FirstName @Model.User.LastName</h1>
+        <div class="col-md-4">
+            <a class="btn btn-primary btn-block" href="/Admin/Pending">Pending Applications</a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary btn-block" href="/Admin/Categories">Categories</a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-primary btn-block" href="/Admin/signOut">Sign Out</a>
+        </div>
+    </div>
+</div>

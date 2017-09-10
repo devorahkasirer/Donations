@@ -1,0 +1,31 @@
+﻿@using Donations.Data
+@model Donations.Web.Models.HistoryViewModel
+
+<h2>Application History for @Model.User.FirstName @Model.User.LastName</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    @foreach(Application a in Model.Applications)
+    {
+        <tr>
+            <td>@a.Date.ToShortDateString()</td>
+            <td>@a.Amount.ToString("C")</td>
+            <td>@a.Category.Name</td>
+            <td class="">@a.Description</td>
+            @if(a.isApproved)
+            {
+                <td style="color:green">Approved</td>
+            }
+            else
+            {
+                <td style="color:orangered">Pending</td>
+            }
+        </tr>
+    }
+</table>
